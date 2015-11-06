@@ -1,0 +1,9 @@
+from pyvirtualdisplay import Display
+from selenium import webdriver
+#from selenium.webdriver.common.keys import Keys
+
+display = Display(visible=1,size=(800,600))
+display.start()
+driver = webdriver.Chrome()
+driver.get("http://www.google.com")
+print driver.title
