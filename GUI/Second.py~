@@ -1,0 +1,11 @@
+#!/usr/bin/python
+from Tkinter import *
+bkg = Tk()
+
+list1 = 'Joe Brit Lincoln Newbie'.split()
+list1b = Listbox(bkg)
+for item in list1:
+    list1b.insert(0,item)
+
+list1b.pack()
+bkg.mainloop()
