@@ -1,0 +1,19 @@
+Contents
+
+Alignment.py             <--  The main Python script used. See comments for details
+Cangmom.cpp              <--  C++ code for angular momentum coupling coefficients
+Cangmom.cpython-32mu.so  <--  compiled shared library, linked with boost so that it's
+                                 accessible with Python
+setup.py                 <--  script to compile Cangmom.cpp. to use, type
+                                 python3 setup.py build
+                                 or
+                                 python setup.py build
+                                 if you use python2.x, some things may need to be changed
+                                 in Alignment.py, e.g. the top line and print statements.
+                                 The compiled library will be in build/lib.linux-x86_64-3.2
+                                 and you should copy it to the working directory.
+knockdif.output          <-- an example output of the knockdif code, giving m-state
+                                 population from a knockout reaction
+state_9                  <-- an example file of m-state population for pickup, from
+                                 Jeff Tostevin
+

@@ -1,0 +1,55 @@
+  
+  --------------  Program KNOCKDIF     --------------
+  
+     Calculates momentum distributions for stripping
+     and diffraction dissociation reactions  with
+     eikonal scattering waves
+  
+  ---------------------------------------------------
+  
+  Inputs are: SMATC.INP (S-matrix for core+target) 
+              SMATN.INP (S-matrix for nucleon+target)
+              WF.INP for single-particle wavefunction
+  Read end of program for instructions on input files
+  
+  ---------------------------------------------------
+  
+  Enter ZPROJ, APROJ, ZTARGET, ATARGET, ELAB/NUCLEON
+  
+  Enter ZCORE, ACORE (to neglect Coulomb enter ZCORE=-1)
+  
+  Enter (Stripping options: 1 or 3)
+        1 for d sigma / d k_z  
+        3 for d sigma / d k_y  
+  
+  Default number of points for integrations are:
+  NR=100, NB=100, NK=100
+  Default maximum momentum is PMAX=500 (MeV/c)
+  
+  Want to change these numbers? 1 yes,  0  no
+  Enter NR, NB, NK, PMAX
+  ----
+  Enter angular momentum L,M of the wavefunction
+  
+  
+  Stripping X-section (M=-L + M=L) [mb]  =   1.008    
+  ----
+  Enter angular momentum L,M of the wavefunction
+  
+  
+  Stripping X-section (M=-L + M=L) [mb]  =   2.075    
+  ----
+  Enter angular momentum L,M of the wavefunction
+  
+  
+  Stripping X-section (M=-L + M=L) [mb]  =   2.602    
+  ----
+  Enter angular momentum L,M of the wavefunction
+  
+  
+  Stripping X-section (M=-L + M=L) [mb]  =   4.405    
+  ----
+  Enter angular momentum L,M of the wavefunction
+  
+  Total stripping cross section   10.0898302717534      mb
+  DONE 
