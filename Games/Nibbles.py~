@@ -1,0 +1,9 @@
+#!/usr/bin/python
+
+import sys
+import random
+from PIL import Image, ImageTk
+from Tkinter import Tk,Frame,Canvas,ALL,NW
+
+WIDTH = 300
+
