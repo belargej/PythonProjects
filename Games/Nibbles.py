@@ -58,7 +58,7 @@ class Board(Canvas):
         self.bind_all("<Key>", self.onKeyPressed)
         self.after(DELAY,self.onTimer)
 
-    def createOjbects(self):
+    def createObjects(self):
         self.create_image(self.apple_x,self.apple_y,image=self.apple,
                           anchor=NW,tag="apple")
         self.create_image(50,50,image=self.head,anchor=NW,tag="head")
@@ -100,7 +100,7 @@ class Board(Canvas):
         if self.down:
             self.move(head,0,DOT_SIZE)
 
-    def checkCollision(self):
+    def checkCollisions(self):
         dots = self.find_withtag("dot")
         head = self.find_withtag("head")
         x1,y1,x2,y2 = self.bbox(head)
@@ -112,7 +112,7 @@ class Board(Canvas):
                     self.inGame = False 
         if x1<0:
             self.inGame = False
-        if x1 > WIDTH-DOT_Size:
+        if x1 > WIDTH-DOT_SIZE:
             self.inGame = False
         if y1<0:
             self.inGame = False
@@ -171,6 +171,16 @@ class Board(Canvas):
 
 class Nibbs(Frame):
     def __init__(self,parent):
-        Frame.__init__
-        self.parent = parent
+        Frame.__init__(self,parent)
+        
+        parent.title('Nibbles')
+        self.board = Board(parent)
+        self.pack()
 
+def main():
+    root = Tk()
+    nib = Nibbs(root)
+    root.mainloop()
+
+if __name__=='__main__':
+    main()
