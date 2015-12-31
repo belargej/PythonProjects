@@ -3,7 +3,7 @@
 from Tkinter import Tk, Canvas, Frame, BOTH
 import random
 
-ADDVAL = 5
+ADDVAL = 15
 XSTEP = 5
 
 class Ex(Frame):
@@ -39,14 +39,26 @@ class Ex(Frame):
 
         self.y_current = self.y_before + addval
         self.x_current = self.x_before + XSTEP
-        if self.y_current > 200:
-            self.canvas.create_line(self.x_before,self.y_before,
-                                    self.x_current,self.y_current,
-                                    fill = "green", width = 5)
+        
+        if self.y_current < 200:
+            if self.y_before == 200:
+                self.canvas.create_line(self.x_before,self.y_before,
+                                        self.x_current,self.y_current,
+                                        fill = "green", width = 5)
+            else:
+                self.canvas.create_line(self.x_before,self.y_before,
+                                        self.x_current,self.y_current,
+                                        fill = "green", width = 5)
         else:
-            self.canvas.create_line(self.x_before,self.y_before,
-                                    self.x_current,self.y_current,
-                                    fill = "red", width = 5)
+            if self.y_before<200:
+                self.canvas.create_line(self.x_before,self.y_before,
+                                        self.x_current,self.y_current,
+                                        fill = "green", width = 5)
+            else:
+                self.canvas.create_line(self.x_before,self.y_before,
+                                        self.x_current,self.y_current,
+                                        fill = "red", width = 5)
+
         self.canvas.pack(fill=BOTH,expand=1)
         self.x_before = self.x_current
         self.y_before = self.y_current
