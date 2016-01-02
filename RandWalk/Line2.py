@@ -19,6 +19,7 @@ class Ex(Frame):
         self.FirstRun = True
         self.initUI()
         self.runRandWalk(STEPS)
+        self.FirstRun = False
 
     def initUI(self):
         self.parent.title("Random Walk Lines 1")
@@ -44,7 +45,6 @@ class Ex(Frame):
 
 
     def newWalk(self):
-        print("Walk anew")
         for x in range(0,STEPS):
             getTag = "step"+str(x)
             self.canvas.coords(getTag,(0,0,0,0))
@@ -53,10 +53,9 @@ class Ex(Frame):
         self.x_current = 20
         self.x_before  = 20
         self.y_current = 200
-        self.x_before  = 200
+        self.y_before  = 200
         self.runRandWalk(STEPS)
-        print ("did this run?")
-
+        
     def closeAll(self):
         Frame.quit(self)
 
@@ -68,36 +67,58 @@ class Ex(Frame):
             addval = ADDVAL
         else:
             addval = -ADDVAL
-
+            
         self.y_current = self.y_before + addval
         self.x_current = self.x_before + XSTEP
-        
+                
         if self.y_current < 200:
             if self.y_before == 200:
-                self.canvas.create_line(self.x_before,self.y_before,
-                                        self.x_current,self.y_current,
-                                        fill = "green", width = 5,
-                                        tags=toTag)
+                if self.FirstRun == True:
+                    self.canvas.create_line(self.x_before,self.y_before,
+                                            self.x_current,self.y_current,
+                                            fill = "green", width = 5,
+                                            tags=toTag)
+                else:
+                    self.canvas.coords(toTag,(self.x_before,self.y_before,
+                                              self.x_current,self.y_current),)
+                    self.canvas.itemconfig(toTag,fill="green")
             else:
-                self.canvas.create_line(self.x_before,self.y_before,
-                                        self.x_current,self.y_current,
-                                        fill = "green", width = 5,
-                                        tags=toTag)
+                if self.FirstRun == True:
+                    self.canvas.create_line(self.x_before,self.y_before,
+                                            self.x_current,self.y_current,
+                                            fill = "green", width = 5,
+                                            tags=toTag)
+                else:                    
+                    self.canvas.coords(toTag,(self.x_before,self.y_before,
+                                             self.x_current,self.y_current))
+                    self.canvas.itemconfig(toTag,fill="green")
         else:
             if self.y_before<200:
-                self.canvas.create_line(self.x_before,self.y_before,
-                                        self.x_current,self.y_current,
-                                        fill = "green", width = 5,
-                                        tags=toTag)
+                if self.FirstRun==True:
+                    self.canvas.create_line(self.x_before,self.y_before,
+                                            self.x_current,self.y_current,
+                                            fill = "green", width = 5,
+                                            tags=toTag)
+                else:
+                    self.canvas.coords(toTag,(self.x_before,self.y_before,
+                                             self.x_current,self.y_current))
+                    self.canvas.itemconfig(toTag,fill="green")
             else:
-                self.canvas.create_line(self.x_before,self.y_before,
-                                        self.x_current,self.y_current,
-                                        fill = "red", width = 5,
-                                        tags=toTag)
+                if self.FirstRun==True:
+                    self.canvas.create_line(self.x_before,self.y_before,
+                                            self.x_current,self.y_current,
+                                            fill = "red", width = 5,
+                                            tags=toTag)
+                else:
+                    self.canvas.coords(toTag,(self.x_before,self.y_before,
+                                             self.x_current,self.y_current))
+                    self.canvas.itemconfig(toTag,fill="red")
 
+                
         self.canvas.pack(fill=BOTH,expand=1)
         self.x_before = self.x_current
         self.y_before = self.y_current
+                    
 
     def runRandWalk(self,steps):
         for x in range(0,steps):
