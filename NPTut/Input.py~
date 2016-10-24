@@ -1,0 +1,4 @@
+#!/usr/bin/env python
+print("Hello. Is there anybody in there?")
+ui = input("Just nod if you can here me.")
+print("I see,", ui)
