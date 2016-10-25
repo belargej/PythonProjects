@@ -1,0 +1,7 @@
+print("Login Playing")
+print("=======================")
+user_name=input("To begin, enter a username: ")
+password=input("Now enter a password: ")
+quitval = str()
+while quitval!="quit":
+    
