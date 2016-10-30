@@ -1,0 +1,9 @@
+function sum = SumVect(vec)
+  % This is documentation --------
+  % This function takes an input vector
+  % and returns the sum of all members of the vector
+  
+  sz = size(vec)
+  fprintf("The vector has size = %d\n",sz);
+
+end

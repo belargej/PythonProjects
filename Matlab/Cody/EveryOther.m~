@@ -1,0 +1,13 @@
+function eo = EveryOther(vec)
+  %this selects every other element of a vector
+  % and creates a new vector.
+  sz = size(vec,2);
+count = 1
+for i = 1:sz
+	  if count%2 == 0
+	  
+	  
+	  count = count+1
+	  end
+	  
+end
