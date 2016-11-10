@@ -1,0 +1,8 @@
+function a = MonotoneIncrease(vec)
+	% this function takes a vector and sees if it is monotonically
+	% increasing.
+
+  sz = size(vec);
+  
+
+end

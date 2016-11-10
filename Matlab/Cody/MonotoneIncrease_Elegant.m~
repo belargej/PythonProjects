@@ -1,0 +1,6 @@
+function a = MonotoneIncrease_Elegant(vec)
+  % this is the nice way to determine if a vector increases
+  % monotonically.
+
+  end
+  
