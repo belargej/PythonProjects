@@ -1,0 +1,6 @@
+function score = OrderedDoms(list,order)
+	 % Take a list of ordered pairs an the order they should be in
+	 % then get the sum of the abs diff of the yeilds. For Example
+	 % list = [1 2;5 3;2 4] order = [1 2 3]
+	 % yeilds = [1 2][5 3][2 4] 
+	 %         abs(2-5)+abs(3-2)=4
